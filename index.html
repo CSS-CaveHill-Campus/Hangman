@@ -12,20 +12,21 @@
     <section class="section">
         <div id="header" class="is-flex is-justify-content-space-between container">
             <h1 class="title">Welcome to CSS Hangman</h1>
-            <p>Guesses Left: <span id="guessCount">-</span></p>
+            <p>Health Left: <span id="healthCount">-</span></p>
         </div>
         <h2 class="subtitle">Guess the word!</h2>
-        <div id="wordContainer" class="is-flex is-justify-content-space-evenly">
-            <span class="is-size-2">D</span>
-            <span class="is-size-2">E</span>
-            <span class="is-size-2">M</span>
-            <span class="is-size-2">_____</span>
+        <p id="messageText"></p>
+        <div id="wordContainer" class="is-flex is-justify-content-space-evenly is-size-2 is-uppercase">
+            <span id="letter-0">D</span>
+            <span id="letter-1">E</span>
+            <span id="letter-2">M</span>
+            <span id="letter-3">_____</span>
         </div>
         <div class="my-5"></div>
         <div id="inputContainer" class="is-flex is-justify-content-center">
             <input type="text" name="letterGuess" id="letterGuess" class="input" maxlength="1" autocomplete="off"
                 style="max-width: 50px">
-            <button id="guessButton" class="button btn-primary"><-- Guess</button>
+            <button id="guessButton" class="button btn-primary" onclick="guessLetter()"><-- Guess</button>
         </div>
         <div id="buttonsContainer" class="is-flex is-justify-content-space-around">
             <button id="startButton" class="button btn-primary" onclick="startGame()">New Game</button>
@@ -33,6 +34,7 @@
         </div>
     </section>
 </body>
+<script src="words.js"></script>
 <script src="script.js"></script>
 
 </html>
