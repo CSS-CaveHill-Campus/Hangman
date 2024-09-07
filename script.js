@@ -2,11 +2,9 @@
 const playerHealthText = document.getElementById('healthCount');
 const messageText = document.getElementById("messageText") // Can use this to give the player messages
 const wordContainer = document.getElementById('wordContainer');
-const inputContainer = document.getElementById('inputContainer');
 const letterGuessField = document.getElementById('letterGuess');
 const guessButton = document.getElementById('guessButton');
 const startButton = document.getElementById('startButton');
-const buttonsContainer = document.getElementById('buttonsContainer');
 // const hintButton = document.getElementById('hintButton');
 
 // Some variables for you
@@ -26,7 +24,7 @@ const createWordSpaces = (word) => {
 // Function for modifying the guess count element
 const setPlayerHealth = (newHealth) => {
     health = newHealth;
-    playerHealthText.innerHTML = guesses;
+    playerHealthText.innerHTML = health;
 }
 
 // Function for sending the player a message
@@ -43,11 +41,20 @@ const getRandomWord = () => {
     return chosenWord;
 }
 
+// Function for checking if the player has won
+const checkWin = () => {
+    for (let i = 0; i < current_word.length; i++){
+        let elem = document.getElementById(`letter-${i}`);
+        if (elem.innerHTML == "____") return false;
+    }
+    return true;
+}
+
 // Functions for you to complete
 
 // Start Game!
 const startGame = () => {
-    // Select a random word using the getRandomWord function
+    // Select a random word using the getRandomWord function. Assign it to the currentWord variable
 
     // Set the player's health to a number you please. HINT: Use the setPlayerHealth function
     
@@ -62,10 +69,10 @@ const startGame = () => {
 const guessLetter = () => {
     // Check to see if gameOver variable is True. If so, send a message to the player to "Start a new Game". Then return.
 
-    // Get the guess value from the letterGuessField element.
+    // Get the guess value from the letterGuessField element. Hint: You can use .value on an input element to get it's value
 
-    // See if that letter is in the chosen word!
-
+    // See if that letter is in the chosen word! Hint: Try using a variable to store whether the letter was found or not
+    
     // If it is, update the UI to have that letter in all the correct places.
     // Hint 1: You can use a loop for this!
     // Hint 2: Each span tag has an id that matches its index in the word. :)
@@ -75,8 +82,8 @@ const guessLetter = () => {
     // Check to see if the player is out of health.
 
     // If so, send a messaage to the player, telling them "Game Over!", then set the gameOver variable to true.
-
-    // Check to see if the player found all the letters in the word!
+        
+    // Check to see if the player found all the letters in the word! Hint: Use the checkWin function
 
     // If so, send a message to the player, telling them "You Win!", then set the gameOver variable to true.
 }
