@@ -16,7 +16,8 @@ let health = 0;
 let gameOver = true;
 
 // Function for adding empty '____' (blank spaces) for each letter in the word
-const createWord = (word) => {
+const createWordSpaces = (word) => {
+    wordContainer.innerHTML = ""; // This will reset the word container
     for (let i = 0; i < word.length; i++){
         wordContainer.innerHTML += `<span id="letter-${i}">____</span>`
     }
@@ -50,7 +51,7 @@ const startGame = () => {
 
     // Set the player's health to a number you please. HINT: Use the setPlayerHealth function
     
-    // Create a '____' for each letter in the word.
+    // Create a '____' for each letter in the word. HINT: Use the createWordSpaces function
 
     // Use setMessage to tell the player to "Start Guessing"
 
@@ -60,6 +61,7 @@ const startGame = () => {
 // Make Guess
 const guessLetter = () => {
     // Check to see if gameOver variable is True. If so, send a message to the player to "Start a new Game". Then return.
+
     // Get the guess value from the letterGuessField element.
 
     // See if that letter is in the chosen word!
