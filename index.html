@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="section">
+        <div id="header" class="is-flex is-justify-content-space-between container">
+            <h1 class="title">Welcome to CSS Hangman</h1>
+            <p>Guesses Left: <span id="guessCount">-</span></p>
+        </div>
+        <h2 class="subtitle">Guess the word!</h2>
+        <div id="wordContainer" class="is-flex is-justify-content-space-evenly">
+            <span class="is-size-2">D</span>
+            <span class="is-size-2">E</span>
+            <span class="is-size-2">M</span>
+            <span class="is-size-2">_____</span>
+        </div>
+        <div class="my-5"></div>
+        <div id="inputContainer" class="is-flex is-justify-content-center">
+            <input type="text" name="letterGuess" id="letterGuess" class="input" maxlength="1" autocomplete="off"
+                style="max-width: 50px">
+            <button id="guessButton" class="button btn-primary"><-- Guess</button>
+        </div>
+        <div id="buttonsContainer" class="is-flex is-justify-content-space-around">
+            <button id="startButton" class="button btn-primary" onclick="startGame()">New Game</button>
+            <button id="hintButton" class="button btn-secondary" disabled>Hint</button>
+        </div>
+    </section>
+</body>
+<script src="script.js"></script>
+
+</html>
